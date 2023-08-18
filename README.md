@@ -1,4 +1,4 @@
-# sudoku2x2
+# sudoku4x4
 
 es un juego de lógica en Python en el que los jugadores deben llenar una cuadrícula de 4x4 con números del 1 al 4, siguiendo ciertas reglas. Los números no deben repetirse en ninguna fila ni columna, y la cuadrícula inicialmente contiene algunos números predeterminados.
 
