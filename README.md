@@ -15,3 +15,27 @@ El jugador ingresa los números en las posiciones vacías de la cuadrícula.
 El programa valida si las filas y columnas cumplen con las reglas del juego: no deben haber números repetidos.
 
 Si la cuadrícula cumple con las reglas, se muestra un mensaje de éxito. Si no cumple, se muestra un mensaje de error y el programa se detiene.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+# pseudocodigo:
+
+1. Solicitar al usuario que elija el modo de juego
+2. Determinar la cantidad de números que se mostrarán en la cuadrícula según el modo
+3. Inicializar cuadricula, posiciones_fila y numeros
+4. Mezclar posiciones_fila y numeros
+5. Crear la cuadrícula inicial con números iniciales y espacios vacíos
+6. Imprimir la cuadrícula inicial
+7. Inicializar respuestas_usuario y entrada
+8. Mientras entrada no sea "submit":
+   1. Solicitar entrada al usuario y agregar a respuestas_usuario
+9. Definir función obtener_fila(cual_fila) que retorna una fila de la cuadrícula
+10. Obtener filas originales (fila1, fila2, fila3, fila4)
+11. Definir función reemplazar_vacios(fila, contador) que llena espacios vacíos con respuestas_usuario
+12. Llenar las filas con los números del usuario usando reemplazar_vacios
+13. Obtener columnas originales (columna1, columna2, columna3, columna4)
+14. Definir función validar(array) que verifica si no hay números repetidos en el array
+15. Validar filas usando validar y si no son válidas, mostrar mensaje de error y salir
+16. Validar columnas usando validar y si no son válidas, mostrar mensaje de error y salir
+17. Imprimir mensaje de éxito si todas las validaciones pasan
