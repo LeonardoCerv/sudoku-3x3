@@ -1,6 +1,6 @@
-# sudoku4x4
+# Sudoku4x4
 
-es un juego de lógica en Python en el que los jugadores deben llenar una cuadrícula de 4x4 con números del 1 al 4, siguiendo ciertas reglas. Los números no deben repetirse en ninguna fila ni columna, y la cuadrícula inicialmente contiene algunos números predeterminados.
+Es un juego de lógica en Python en el que los jugadores deben llenar una cuadrícula de 4x4 con números del 1 al 4, siguiendo ciertas reglas. Los números no deben repetirse en ninguna fila ni columna, y la cuadrícula inicialmente contiene algunos números predeterminados.
 
 Aquí está el resumen del flujo de trabajo del juego:
 
@@ -19,7 +19,7 @@ Si la cuadrícula cumple con las reglas, se muestra un mensaje de éxito. Si no 
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
-# pseudocodigo:
+# Pseudocodigo:
 
 1. Solicitar al usuario que elija el modo de juego
 2. Determinar la cantidad de números que se mostrarán en la cuadrícula según el modo
@@ -39,3 +39,9 @@ Si la cuadrícula cumple con las reglas, se muestra un mensaje de éxito. Si no 
 15. Validar filas usando validar y si no son válidas, mostrar mensaje de error y salir
 16. Validar columnas usando validar y si no son válidas, mostrar mensaje de error y salir
 17. Imprimir mensaje de éxito si todas las validaciones pasan
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+# Codigo
+
+El codigo se encuentra dentro del repositorio y la version actual tiene como nombre Sudoku.py
