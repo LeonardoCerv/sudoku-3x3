@@ -21,32 +21,65 @@ Si la cuadrícula cumple con las reglas, se muestra un mensaje de éxito. Si no 
 
 # Pseudocodigo:
 
-1. cantidad_numeros = seleccionar_modo_de_juego()
+Inicio del Juego de Sudoku:
 
-2. INICIALIZAR cuadricula, posiciones_fila y numeros
+  Función SeleccionarModoDeJuego():
+    Mostrar("Selecciona el nivel: Fácil, Intermedio o Difícil")
+    Modo = ObtenerEntradaUsuario()
+    Pesos = {"Fácil": 15, "Intermedio": 10, "Difícil": 5}
+    Devolver Pesos[Modo]
 
-3. MEZCLAR posiciones_fila y numeros
+  Función VerificarDuplicadosEnLista(lista):
+    Para Cada Elemento en lista Hacer
+      Si HayDuplicados(Elemento) entonces
+        Mostrar("Hay números duplicados en la lista.")
+        Devolver Falso
+      Fin Si
+    Fin Para
+    Devolver Verdadero
 
-4. CREAR cuadricula inicial con números iniciales y espacios vacíos
+  Función ImprimirTablero(tablero):
+    Para Cada Fila en tablero Hacer
+      Mostrar(Fila)
+    Fin Para
 
-5. IMPRIMIR cuadricula inicial
+  Función CrearTablero():
+    Peso = SeleccionarModoDeJuego()
+    GenerarTableroAleatorioConPesos(Peso)
+    Si No VerificarDuplicadosEnLista(Cuadrículas) entonces
+      Mostrar("El tablero inicial tiene números duplicados.")
+      CrearTablero()
+    Fin Si
+    ActualizarTablero()
 
-6. MIENTRAS entrada NO SEA "submit":
-   6.1. SOLICITAR entrada AL USUARIO Y AGREGAR A respuestas_usuario
+  Función ActualizarTablero():
+    LimpiarFilasColumnasCuadrículas()
+    LlenarFilasColumnasCuadrículasDesdeCuadrículas()
+    Si No VerificarDuplicadosEnLista(Filas) o No VerificarDuplicadosEnLista(Columnas) o No VerificarDuplicadosEnLista(Cuadrículas) entonces
+      Mostrar("Hay números duplicados en el tablero.")
+      DetenerJuego()
+    Fin Si
 
-8. PARA fila EN [1, 2, 3, 4]:
-   7.1. reemplazar_vacios(fila, fila - 1)
-   7.2. SI NO validar(fila) ENTONCES
-       7.2.1. ESCRIBIR "Error en fila", fila, ": Números repetidos"
-       7.2.2. SALIR
+  InicializarTableroDeSudoku()
+  CrearTablero()
+  ImprimirTablero(Tablero)
+  
+  Mientras Verdadero:
+    Mostrar("Elige cuadrícula (1-9), posición (1-9) y número (1-9)")
+    Cuadrícula, Posición, Número = ObtenerEntradaUsuario()
+    Si ValorCelda(Tablero, Cuadrícula, Posición) == 0 entonces
+      ActualizarCelda(Tablero, Cuadrícula, Posición, Número)
+      Si ActualizarTablero() entonces
+        ImprimirTablero(Tablero)
+        Mostrar("¡Bien hecho! Has completado el Sudoku.")
+        DetenerJuego()
+      Fin Si
+    Sino
+      Mostrar("La casilla ya contiene un número.")
+    Fin Si
 
-10. PARA columna EN [1, 2, 3, 4]:
-   8.1. reemplazar_vacios(columna, columna + 3)
-   8.2. SI NO validar(columna) ENTONCES
-       8.2.1. ESCRIBIR "Error en columna", columna, ": Números repetidos"
-       8.2.2. SALIR
+Fin del Juego de Sudoku
 
-12. ESCRIBIR "¡Éxito! Todas las validaciones pasaron"
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
