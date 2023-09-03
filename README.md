@@ -34,19 +34,19 @@ Si la cuadrícula cumple con las reglas, se muestra un mensaje de éxito. Si no 
 6. MIENTRAS entrada NO SEA "submit":
    6.1. SOLICITAR entrada AL USUARIO Y AGREGAR A respuestas_usuario
 
-7. PARA fila EN [1, 2, 3, 4]:
+8. PARA fila EN [1, 2, 3, 4]:
    7.1. reemplazar_vacios(fila, fila - 1)
    7.2. SI NO validar(fila) ENTONCES
        7.2.1. ESCRIBIR "Error en fila", fila, ": Números repetidos"
        7.2.2. SALIR
 
-8. PARA columna EN [1, 2, 3, 4]:
+10. PARA columna EN [1, 2, 3, 4]:
    8.1. reemplazar_vacios(columna, columna + 3)
    8.2. SI NO validar(columna) ENTONCES
        8.2.1. ESCRIBIR "Error en columna", columna, ": Números repetidos"
        8.2.2. SALIR
 
-9. ESCRIBIR "¡Éxito! Todas las validaciones pasaron"
+12. ESCRIBIR "¡Éxito! Todas las validaciones pasaron"
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
