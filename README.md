@@ -77,4 +77,4 @@ Fin del Juego de Sudoku
 
 # Codigo
 
-El codigo se encuentra dentro del repositorio y la version actual tiene como nombre SudokuV2.py
+El codigo se encuentra dentro del repositorio y la version actual tiene como nombre Sudoku.py
