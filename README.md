@@ -21,62 +21,54 @@ Si la cuadrícula cumple con las reglas, se muestra un mensaje de éxito. Si no 
 
 # Pseudocodigo:
 
-Inicio del Juego de Sudoku:
+Juego de Sudoku:
 
-  Función SeleccionarModoDeJuego():
-    Mostrar("Selecciona el nivel: Fácil, Intermedio o Difícil")
-    Modo = ObtenerEntradaUsuario()
-    Pesos = {"Fácil": 15, "Intermedio": 10, "Difícil": 5}
-    Devolver Pesos[Modo]
+- SeleccionarModoDeJuego():
+  - Mostrar("Elige nivel: Fácil, Intermedio o Difícil")
+  - Pesos = {"Fácil": 15, "Intermedio": 10, "Difícil": 5}
+  - Devolver Pesos[ObtenerEntradaUsuario()]
 
-  Función VerificarDuplicadosEnLista(lista):
-    Para Cada Elemento en lista Hacer
-      Si HayDuplicados(Elemento) entonces
-        Mostrar("Hay números duplicados en la lista.")
-        Devolver Falso
-      Fin Si
-    Fin Para
-    Devolver Verdadero
+- VerificarDuplicadosEnLista(lista):
+  - Para Cada Elemento en lista:
+    - Si HayDuplicados(Elemento):
+      - Mostrar("Números duplicados en la lista.")
+      - Devolver Falso
+  - Devolver Verdadero
 
-  Función ImprimirTablero(tablero):
-    Para Cada Fila en tablero Hacer
-      Mostrar(Fila)
-    Fin Para
+- ImprimirTablero(tablero):
+  - Para Cada Fila en tablero:
+    - Mostrar(Fila)
 
-  Función CrearTablero():
-    Peso = SeleccionarModoDeJuego()
-    GenerarTableroAleatorioConPesos(Peso)
-    Si No VerificarDuplicadosEnLista(Cuadrículas) entonces
-      Mostrar("El tablero inicial tiene números duplicados.")
-      CrearTablero()
-    Fin Si
-    ActualizarTablero()
+- CrearTablero():
+  - Peso = SeleccionarModoDeJuego()
+  - GenerarTableroAleatorioConPesos(Peso)
+  - Si No VerificarDuplicadosEnLista(Cuadrículas):
+    - Mostrar("Tablero inicial con números duplicados.")
+    - CrearTablero()
+  - ActualizarTablero()
 
-  Función ActualizarTablero():
-    LimpiarFilasColumnasCuadrículas()
-    LlenarFilasColumnasCuadrículasDesdeCuadrículas()
-    Si No VerificarDuplicadosEnLista(Filas) o No VerificarDuplicadosEnLista(Columnas) o No VerificarDuplicadosEnLista(Cuadrículas) entonces
-      Mostrar("Hay números duplicados en el tablero.")
-      DetenerJuego()
-    Fin Si
+- ActualizarTablero():
+  - LimpiarFilasColumnasCuadrículas()
+  - LlenarFilasColumnasCuadrículasDesdeCuadrículas()
+  - Si No VerificarDuplicadosEnLista(Filas) o No VerificarDuplicadosEnLista(Columnas) o No VerificarDuplicadosEnLista(Cuadrículas):
+    - Mostrar("Números duplicados en el tablero.")
+    - DetenerJuego()
 
-  InicializarTableroDeSudoku()
-  CrearTablero()
-  ImprimirTablero(Tablero)
+- InicializarTableroDeSudoku()
+- CrearTablero()
+- ImprimirTablero(Tablero)
   
-  Mientras Verdadero:
-    Mostrar("Elige cuadrícula (1-9), posición (1-9) y número (1-9)")
-    Cuadrícula, Posición, Número = ObtenerEntradaUsuario()
-    Si ValorCelda(Tablero, Cuadrícula, Posición) == 0 entonces
-      ActualizarCelda(Tablero, Cuadrícula, Posición, Número)
-      Si ActualizarTablero() entonces
-        ImprimirTablero(Tablero)
-        Mostrar("¡Bien hecho! Has completado el Sudoku.")
-        DetenerJuego()
-      Fin Si
-    Sino
-      Mostrar("La casilla ya contiene un número.")
-    Fin Si
+- Mientras Verdadero:
+  - Mostrar("Elige cuadrícula (1-9), posición (1-9) y número (1-9)")
+  - Cuadrícula, Posición, Número = ObtenerEntradaUsuario()
+  - Si ValorCelda(Tablero, Cuadrícula, Posición) == 0:
+    - ActualizarCelda(Tablero, Cuadrícula, Posición, Número)
+    - Si ActualizarTablero():
+      - ImprimirTablero(Tablero)
+      - Mostrar("¡Bien hecho! Has completado el Sudoku.")
+      - DetenerJuego()
+  - Sino:
+    - Mostrar("La casilla ya contiene un número.")
 
 Fin del Juego de Sudoku
 
