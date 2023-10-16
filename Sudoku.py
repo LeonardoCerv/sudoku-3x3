@@ -1,4 +1,5 @@
 import random
+import os
 
 # Función para seleccionar el modo de juego
 def seleccionar_modo_de_juego():
@@ -25,7 +26,6 @@ def verificar_lista(lista, reemplazar):
                     lista[i].insert(num, 0)
                 else:
                     num = lista[i].index(j)
-                    print(num, i, j)
                     return False
     return True
 
@@ -110,18 +110,28 @@ cuadrados = [[], [], [], [], [], [], [], [], []]
 
 # Crear el tablero inicial
 crear_tablero()
-imprimir_tablero()
 
 # Iniciar el juego
 while True:
+    os.system('cls')
+    imprimir_tablero()
+    
     print("Elige el cuadro (1-9)")
     cuadro = int(input()) - 1
 
-    print("Elige la posición (1-9)")
-    pos = int(input()) - 1
+    print("Elige la posición (1-9) | Escriba X para regresar")
+    aux = input()
+    if aux == "X" or aux == "x":
+        continue
+    else:
+        pos = int(aux) - 1
 
-    print("Ahora introduce el número que irá en esa posición")
-    numero = int(input())
+    print("Ahora introduce el número que irá en esa posición | Escriba X para regresar")
+    aux = input()
+    if aux == "X" or aux == "x":
+        continue
+    else:
+        numero = int(aux)
 
     auxiliar = int(cuadrados[cuadro][pos])
 
@@ -129,10 +139,8 @@ while True:
         cuadrados[cuadro].pop(pos)
         cuadrados[cuadro].insert(pos, numero)
         if actualizar_tablero(False):
-            imprimir_tablero()
             print("¡Bien hecho!")
         else:
-            imprimir_tablero()
             print("¡Has perdido!")
             exit()
     else:
