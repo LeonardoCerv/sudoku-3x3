@@ -1,1 +1,0 @@
-Hace falta la reevaluacion del componente: usa la forma más a apropiada al problema para guardar los datos (listas, variable, tipo de dato, etc...) (avance 6 y avance 7), aparte de la revision final.
