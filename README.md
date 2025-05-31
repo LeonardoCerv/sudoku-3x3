@@ -68,7 +68,7 @@ To run the program:
 
 1. Clone the repository.
 2. Run `Sudoku.py` using any Python 3 interpreter.
-3. Follow on screen instructions to select a difficulty and begin playing.
+3. Follow on screen instructions **in spanish** to select a difficulty and begin playing.
 
 This is a terminal-based game, no external libraries or GUI are required.
 
