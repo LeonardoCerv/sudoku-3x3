@@ -1,80 +1,78 @@
-# Sudoku3x3
+# Sudoku 3x3 – Python Logic Puzzle
 
-Es un juego de lógica en Python en el que los jugadores deben llenar una cuadrícula de 3x3 con números del 1 al 9, siguiendo ciertas reglas. Los números no deben repetirse en ninguna fila, columna o cuadrado, y la cuadrícula inicialmente contiene algunos números predeterminados.
+## Overview
 
-Aquí está el resumen del flujo de trabajo del juego:
+**Sudoku3x3** is a simple, interactive logic game built in Python as part of my first programming course, *Pensamiento Computacional*. The project challenged me to apply core computing concepts to create a playable Sudoku puzzle, where users must complete a 9x9 board without repeating numbers in any row, column, or 3x3 box.
 
-El jugador selecciona un modo de juego: fácil (F), intermedio (I) o difícil (D).
+This version features adjustable difficulty levels and live input validation. It also demonstrates how to handle grid based constraints efficiently, all while maintaining an accessible user interface via the command line.
 
-Se establece la cantidad de números que se muestran en la cuadrícula en función del modo seleccionado.
+---
 
-Se crea una cuadrícula 3x3 con algunos números iniciales y espacios vacíos.
+## What the Program Does
 
-El jugador ingresa los números en las posiciones vacías de la cuadrícula.
+* Allows the player to choose a difficulty level: Easy, Intermediate, or Hard.
+* Generates a partially filled 9x9 Sudoku board (modeled as 3x3 boxes).
+* Validates that the board starts with no duplicate numbers in rows, columns, or 3x3 squares.
+* Lets players fill in empty positions by selecting a box, position, and number.
+* Re-validates constraints on each move; ends the game if a rule is broken.
+* Displays the board in a visually segmented format for ease of use.
 
-El programa valida si las filas y columnas cumplen con las reglas del juego: no deben haber números repetidos.
+---
 
-Si la cuadrícula cumple con las reglas, se muestra un mensaje de éxito. Si no cumple, se muestra un mensaje de error y el programa se detiene.
+## How It Works
 
+Behind the scenes, the game logic:
 
--------------------------------------------------------------------------------------------------------------------------------------
+* **initializes the 9x9 grid** using a set of two dimensional lists to represent:
 
-# Pseudocodigo:
+  * `filas` (rows)
+  * `columnas` (columns)
+  * `cuadrados` (3x3 subgrids)
 
-Juego de Sudoku:
+  This structure simplifies constraint checking and board updates. 
 
-- SeleccionarModoDeJuego():
-  - Mostrar("Elige nivel: Fácil, Intermedio o Difícil")
-  - Pesos = {"Fácil": 15, "Intermedio": 10, "Difícil": 5}
-  - Devolver Pesos[ObtenerEntradaUsuario()]
+* **Randomly generates board values** based on difficulty level, using weighted choices to determine how many cells are pre-filled.
 
-- VerificarDuplicadosEnLista(lista):
-  - Para Cada Elemento en lista:
-    - Si HayDuplicados(Elemento):
-      - Mostrar("Números duplicados en la lista.")
-      - Devolver Falso
-  - Devolver Verdadero
+* **Implements constraint checking logic** across all directions (rows, columns, boxes) with helper functions that detect and replace duplicates.
 
-- ImprimirTablero(tablero):
-  - Para Cada Fila en tablero:
-    - Mostrar(Fila)
+* **Handles user input validation** gracefully, guiding players through each step while preventing invalid actions.
 
-- CrearTablero():
-  - Peso = SeleccionarModoDeJuego()
-  - GenerarTableroAleatorioConPesos(Peso)
-  - Si No VerificarDuplicadosEnLista(Cuadrículas):
-    - Mostrar("Tablero inicial con números duplicados.")
-    - CrearTablero()
-  - ActualizarTablero()
+---
 
-- ActualizarTablero():
-  - LimpiarFilasColumnasCuadrículas()
-  - LlenarFilasColumnasCuadrículasDesdeCuadrículas()
-  - Si No VerificarDuplicadosEnLista(Filas) o No VerificarDuplicadosEnLista(Columnas) o No VerificarDuplicadosEnLista(Cuadrículas):
-    - Mostrar("Números duplicados en el tablero.")
-    - DetenerJuego()
+## Concepts and Skills Demonstrated
 
-- InicializarTableroDeSudoku()
-- CrearTablero()
-- ImprimirTablero(Tablero)
-  
-- Mientras Verdadero:
-  - Mostrar("Elige cuadrícula (1-9), posición (1-9) y número (1-9)")
-  - Cuadrícula, Posición, Número = ObtenerEntradaUsuario()
-  - Si ValorCelda(Tablero, Cuadrícula, Posición) == 0:
-    - ActualizarCelda(Tablero, Cuadrícula, Posición, Número)
-    - Si ActualizarTablero():
-      - ImprimirTablero(Tablero)
-      - Mostrar("¡Bien hecho! Has completado el Sudoku.")
-      - DetenerJuego()
-  - Sino:
-    - Mostrar("La casilla ya contiene un número.")
+While building this project, I gained experience with:
 
-Fin del Juego de Sudoku
+* **Data structure design**: Using Python lists to represent and manage structured grid data.
+* **Constraint satisfaction**: Writing logic to enforce Sudoku rules using iteration and conditionals.
+* **Input handling and validation**: Managing real time player input and maintaining data integrity.
+* **Algorithmic thinking**: Designing board transformation functions that preserve rule consistency after each move.
+* **Debugging and iteration**: Improving board generation and duplicate checking through testing and refinement.
 
+---
 
----------------------------------------------------------------------------------------------------------------------------------------
+## Learning Outcomes
 
-# Codigo
+This project directly supported my development in several key academic and professional areas:
 
-El codigo se encuentra dentro del repositorio y la version actual tiene como nombre Sudoku.py
+* **Evaluating technologies to solve problems** (SEG0702): I chose core Python data structures and flow control to implement game mechanics efficiently, gaining confidence in selecting tools fit for purpose.
+* **Analyzing problem components using engineering principles** (SING0301): I broke down the Sudoku rules into manageable conditions and developed code that enforces them consistently.
+* **Applying professional standards to problem-solving** (SING0401): I practiced clean, modular coding and worked toward robust input validation, aiming to create a reliable, user friendly experience.
+
+---
+
+## Getting Started
+
+To run the program:
+
+1. Clone the repository.
+2. Run `Sudoku.py` using any Python 3 interpreter.
+3. Follow on screen instructions to select a difficulty and begin playing.
+
+This is a terminal-based game, no external libraries or GUI are required.
+
+---
+
+## Final Thoughts
+
+Sudoku3x3 was my first substantial programming project. It gave me a chance to see how fundamental logic and structure can turn an abstract idea into a working system. While simple, the design decisions I made reflect how I approach problems: with curiosity, analytical thinking, and a drive to build things that actually work.
