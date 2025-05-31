@@ -1,4 +1,6 @@
 # Sudoku 3x3 – Juego de Lógica en Python
+[![Python](https://img.shields.io/badge/code-Python-yellow.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Juego](https://img.shields.io/badge/Juego-puzzle-blue)]()
 
 ## Descripción General
 
