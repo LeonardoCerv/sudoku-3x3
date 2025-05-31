@@ -1,3 +1,4 @@
+> 📖 🇪🇸 También disponible en español: [README.es.md](README.es.md)
 # Sudoku 3x3 – Python Logic Puzzle
 
 ## Overview
