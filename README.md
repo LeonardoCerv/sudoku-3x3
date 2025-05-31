@@ -1,5 +1,8 @@
 > 📖 🇪🇸 También disponible en español: [README.es.md](README.es.md)
-# Sudoku 3x3 – Python Logic Puzzle
+# Sudoku 3x3
+[![Python](https://img.shields.io/badge/code-Python-yellow.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Game](https://img.shields.io/badge/Game-puzzle-blue)]()
+
 
 ## Overview
 
